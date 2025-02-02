@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    ports:
+      - "80:80"   # HTTP
+      - "443:443" # HTTPS
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./index.html:/usr/share/caddy/index.html
+    environment:
+      - ACME_AGREE=true
