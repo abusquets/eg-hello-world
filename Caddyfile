@@ -1,5 +1,11 @@
 events-guard.geocodi.com {
+    # Redirigir el trànsit que va a /api al servei Go (golang-app)
+    reverse_proxy /api/* golang-app:8080
+
+    # Serveix fitxers estàtics per altres rutes (potser per frontend o arxius)
     root * /usr/share/caddy
     file_server
+
+    # HTTPS automàticament gestionat per Caddy (certificat SSL)
     tls abusquets@gmail.com
 }

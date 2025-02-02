@@ -12,3 +12,10 @@ services:
       - ./index.html:/usr/share/caddy/index.html
     environment:
       - ACME_AGREE=true
+
+  golang-app:
+      image: abusquets/eg-api:latest
+      container_name: golang-app
+      command: ["/prod/go-events-guard", "server"]
+      ports:
+        - "8080:8080"
