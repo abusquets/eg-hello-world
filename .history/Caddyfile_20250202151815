@@ -1,5 +1,0 @@
-events-guard.geocodi.com {
-    root * /usr/share/caddy
-    file_server
-    tls abusquets@gmail.com
-}
